@@ -1,6 +1,6 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { store } from '../store';
+import { store } from '../store/index';
 import {ConnectedDashboard as Dashboard} from "./Dashboard";
 import {Router, Route } from 'react-router-dom';
 import { history } from "../store/history";

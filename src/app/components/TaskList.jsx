@@ -22,10 +22,6 @@ export const TaskList = ({ tasks, name, id, createNewTask }) => {
 };
 
 const mapStateToProps = (state, ownProps) => {
-    console.log('state');
-    console.log(state);
-    console.log('ownProps');
-    console.log(ownProps);
     let groupID = ownProps.id;
     return {
         name: ownProps.name,
