@@ -1,5 +1,5 @@
 import {defaultState} from "../../server/defaultState";
 
-export default function usersReducer(users = defaultState.users, action) {
+export default function usersReducer(users = [], action) {
     return users;
 }

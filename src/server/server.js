@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import bodyParser from 'body-parser';
 import { connectDB } from './connect-db';
+import { authenticationRoute } from "./authenticate";
 
 let port = 7777,
     app = express();
@@ -14,12 +15,14 @@ app.use(
     bodyParser.json()
 );
 
+authenticationRoute(app);
+
 export const addNewTask = async task => {
     let db = await connectDB(),
         collection = db.collection('tasks');
 
     await collection.insertOne(task);
-}
+};
 
 export const updateTask = async task => {
     let { id, group, isComplete, name } = task,

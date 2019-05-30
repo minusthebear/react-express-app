@@ -1,8 +1,10 @@
 import {defaultState} from "../../server/defaultState";
 import * as mutations from "../store/mutations";
 
-export default function tasksReducer(tasks = defaultState.tasks, action) {
+export default function tasksReducer(tasks = [], action) {
     switch (action.type) {
+        case mutations.SET_STATE:
+            return action.state.tasks;
         case mutations.CREATE_TASK:
             return [...tasks, {
                 id: action.taskID,
