@@ -16,6 +16,7 @@ const Dashboard = ({ groups }) => {
 };
 
 function mapStateToProps(state) {
+    console.log(state);
     return {
         groups: state.groups
     }
